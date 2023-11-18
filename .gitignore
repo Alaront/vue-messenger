@@ -1,0 +1,15 @@
+/client/node_modules
+/client/.nuxt
+/server/node_modules
+/server/.env
+/client/.env
+/.pnp
+.pnp.js
+task.md
+/.idea
+
+# testing
+client/coverage
+
+# production
+client/build
