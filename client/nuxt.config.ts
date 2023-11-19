@@ -11,5 +11,6 @@ export default defineNuxtConfig({
   ],
   css: [
     '@/assets/sass/reset.sass',
+    '@/assets/sass/main.sass',
   ]
 })
