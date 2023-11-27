@@ -3,8 +3,8 @@
     <div class="home-page">
       <h1>VUE<br>messenger</h1>
       <div class="home-btn">
-        <button>Sign in</button>
-        <button>Sign up</button>
+        <NuxtLink to="/signIn">Sign in</NuxtLink>
+        <NuxtLink to="/signUp">Sign up</NuxtLink>
       </div>
     </div>
   </HomeLayout>
@@ -35,7 +35,7 @@ import HomeLayout from "~/layout/HomeLayout.vue";
   .home-btn
     display: flex
 
-    button
+    a
       border-radius: 100px
       background: #000
       border: none
@@ -51,6 +51,7 @@ import HomeLayout from "~/layout/HomeLayout.vue";
       line-height: 22px
       display: block
       cursor: pointer
+      text-decoration: none
 
       &:first-child
         margin-right: 20px
