@@ -1,6 +1,9 @@
 <template>
   <main class="main">
-    <slot />
+    <div class="chat">
+      <ChatsSidebar />
+      <slot />
+    </div>
   </main>
 </template>
 
@@ -9,5 +12,13 @@
 </script>
 
 <style scoped lang="sass">
+
+  .chat
+    width: 100%
+    height: 100%
+    position: relative
+
   .main
+    height: 100vh
+
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="dialogues">
-    <ChatsDialoguesItem v-for="item in itemData" v-bind:key="item.id" :name="item.name" :data="item.data" :message="item.message" :notification="item.notification" :avatar="item.avatar"/>
+    <ChatsDialoguesItem v-for="item in itemData" v-bind:key="item.id" :linkHash="item.hash" :name="item.name" :data="item.data" :message="item.message" :notification="item.notification" :avatar="item.avatar"/>
   </div>
 </template>
 
@@ -12,7 +12,8 @@
     message: String,
     notification: Number,
     avatar: String,
-    id: Number
+    id: Number,
+    hash: String
   }
 
   const itemData:Ref<Array<IDialogItem>> = ref([
@@ -22,7 +23,8 @@
       data: "11:09",
       message: "Cool!",
       notification: 2,
-      avatar: ""
+      avatar: "",
+      hash: "f3gFyHgJfbHfnfj7"
     },
 
     {
@@ -31,7 +33,8 @@
       data: "11:09",
       message: "Voice messade!",
       notification: 2,
-      avatar: ""
+      avatar: "",
+      hash: "f3gFfffbHfnfj7"
     },
 
     {
@@ -40,7 +43,8 @@
       data: "11:09",
       message: "I will come to you on the weekend",
       notification: 3,
-      avatar: ""
+      avatar: "",
+      hash: "ddJfbHfnfj7"
     },
 
     {
@@ -49,7 +53,8 @@
       data: "11:09",
       message: "Very happy for you",
       notification: 2,
-      avatar: ""
+      avatar: "",
+      hash: "111yHgJfbHfnfj7"
     },
 
     {
@@ -58,7 +63,8 @@
       data: "11:09",
       message: "Cool!",
       notification: 2,
-      avatar: ""
+      avatar: "",
+      hash: "f3gFyHgJfddF7"
     },
 
     {
@@ -67,7 +73,8 @@
       data: "11:09",
       message: "Cool!",
       notification: 2,
-      avatar: ""
+      avatar: "",
+      hash: "f3g3JfbHfnfj7"
     },
 
     {
@@ -76,7 +83,8 @@
       data: "11:09",
       message: "Cool!",
       notification: 2,
-      avatar: ""
+      avatar: "",
+      hash: "DF4HgJfbHfnfj7"
     },
 
     {
@@ -85,7 +93,8 @@
       data: "11:09",
       message: "Cool!",
       notification: 2,
-      avatar: ""
+      avatar: "",
+      hash: "f3gFyHsdfF7"
     },
 
 
@@ -100,5 +109,6 @@
     width: calc(100% - 32px)
     margin: 50px auto 50px auto
     flex-direction: column
+    max-width: 420px
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="dialogues__item">
+  <div class="dialogues__item" @click="openDialog">
     <div class="dialogues__item-photo">
       <img src="~/assets/chats/photo_ava.png" alt="photo"/>
     </div>
@@ -13,16 +13,24 @@
 </template>
 
 <script setup lang="ts">
-
   interface IProps {
     name: String,
     data: String,
     message: String,
     notification: Number,
-    avatar: String
+    avatar: String,
+    linkHash: String
   }
 
+  const route = useRoute()
+  console.log(route)
+
   const props = defineProps<IProps>()
+  const {name, data, message, notification, avatar, linkHash} = toRefs(props)
+
+  const openDialog = ():void => {
+    navigateTo(`/chats/${linkHash.value}`)
+  }
 
 </script>
 
