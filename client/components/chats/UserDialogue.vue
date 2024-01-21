@@ -103,9 +103,7 @@
 <style scoped lang="sass">
   .user-dialogue
     width: 100%
-    padding: 50px 0 70px 0
     margin: 0 auto
-    height: 100%
     display: flex
     flex-direction: column
     justify-content: flex-end
@@ -114,5 +112,6 @@
     padding: 0 32px
     max-height: 100%
     overflow-y: auto
+    height: calc(100vh - 112px)
 
 </style>

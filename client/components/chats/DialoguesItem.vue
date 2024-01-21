@@ -29,7 +29,7 @@
   const {name, data, message, notification, avatar, linkHash} = toRefs(props)
 
   const openDialog = ():void => {
-    navigateTo(`/chats/${linkHash.value}`)
+    navigateTo(`/chats?id=${linkHash.value}`)
   }
 
 </script>

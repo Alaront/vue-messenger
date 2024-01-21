@@ -1,7 +1,6 @@
 <template>
   <main class="main">
     <div class="chat">
-      <ChatsSidebar />
       <slot />
     </div>
   </main>

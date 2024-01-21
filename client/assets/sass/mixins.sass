@@ -1,0 +1,133 @@
+//Удалить файл после редизайна
+=clearfix
+  &:after
+    content: ''
+    display: table
+    clear: both
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false)
+  @font-face
+    font-family: $font-family
+    font-weight: $weight
+    font-style: $style
+
+    @if $asset-pipeline == true
+      src: font-url('#{$file-path}.eot')
+      src: font-url('#{$file-path}.eot?#iefix') format('embedded-opentype'), font-url('#{$file-path}.woff') format('woff'), font-url('#{$file-path}.ttf') format('truetype'), font-url('#{$file-path}.svg##{$font-family}') format('svg')
+    @else
+      src: url('#{$file-path}.eot')
+      src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype'), url('#{$file-path}.svg##{$font-family}') format('svg')
+
+@mixin placeholder($color)
+  &::-webkit-input-placeholder
+    color: $color
+
+  &:-moz-placeholder
+    color: $color
+
+  &::-moz-placeholder
+    color: $color
+
+  &:-ms-input-placholder
+    color: $color
+
+  &::-ms-input-placeholder
+    color: $color
+
+=media($resolution)
+  @media screen and (max-width: $resolution)
+    @content
+
+=mediamaxmin($max, $min)
+  @media screen and (max-width: $max) and (min-width: $min)
+    @content
+
+=min-w($width)
+  @media screen and (min-width: $width)
+    @content
+
+=max-w($width)
+  @media screen and (max-width: $width)
+    @content
+
+=min-h($height)
+  @media screen and (min-height: $height)
+    @content
+
+=max-h($height)
+  @media screen and (max-height: $height)
+    @content
+
+=visually-hidden
+  position: absolute
+  overflow: hidden
+  width: 1px
+  height: 1px
+  padding: 0
+  border: 0
+  margin: -1px
+  clip: rect(0 0 0 0)
+  clip-path: inset(50%)
+  white-space: nowrap
+
+=tablet
+  @media(max-width: 992px)
+    @content
+
+=mobile
+  @media(max-width: 768px)
+    @content
+
+=mobile-md
+  @media(max-width: 640px)
+    @content
+
+=mobile-xs
+  @media(max-width: 480px)
+    @content
+
+@mixin backgroundWebpImage($image)
+  .webp &
+    background-image: url($image + '?webp')
+  .no-webp &
+    background-image: url($image)
+
+  @content
+
+@keyframes skeleton-loader
+  100%
+    transform: translateX(100%)
+
+@mixin skeleton-loader($w, $h, $bdrs)
+  position: relative
+  width: $w
+  height: $h
+  background: #e3dac6
+  border-radius: $bdrs
+  overflow: hidden
+
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0))
+    transform: translate3d(-100%, 0, 0)
+    z-index: 1
+    animation: skeleton-loader 2s infinite
+
+@mixin verticalScrollbar($barWidth, $barColor, $barThumbRadius, $barThumbColor)
+  scrollbar-color: $barThumbColor $barColor
+  scrollbar-width: thin
+
+  &::-webkit-scrollbar
+    width: $barWidth
+
+  &::-webkit-scrollbar-track
+    background: $barColor
+
+  &::-webkit-scrollbar-thumb
+    border-radius: $barThumbRadius
+    background: $barThumbColor

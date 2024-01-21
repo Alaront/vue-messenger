@@ -1,6 +1,6 @@
 <template>
   <div class="messages-chat">
-    <div class="messages-chat__back">Message</div>
+    <NuxtLink to="/chats" class="messages-chat__back">Message</NuxtLink>
     <div class="messages-chat__header">Name Name</div>
     <div class="messages-chat__photo">
       <div class="messages-chat__photo-wrapper">
@@ -15,6 +15,9 @@
 </script>
 
 <style scoped lang="sass">
+  @import "~/assets/sass/mixins.sass"
+  @import "~/assets/sass/variables.sass"
+
   .messages-chat__back
     color: #000000
     text-align: center
@@ -24,6 +27,7 @@
     line-height: normal
     padding: 0 0 0 16px
     position: relative
+    text-decoration: none
 
     &:before
       content: ''
@@ -39,15 +43,19 @@
   .messages-chat
     width: 100%
     height: 44px
-    position: fixed
-    top: 0
-    left: 0
+    //position: fixed
+    //top: 0
+    //left: 0
     padding: 20px 15px 10px 15px
     background: #ffffff
     z-index: 1
     display: flex
     align-items: center
     justify-content: space-between
+
+    +min-w($desktop_mf)
+      //position: absolute
+      top: 0
 
   .messages-chat__header
     font-size: 18px

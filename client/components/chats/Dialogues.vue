@@ -106,9 +106,14 @@
 <style scoped lang="sass">
   .dialogues
     display: flex
-    width: calc(100% - 32px)
-    margin: 50px auto 50px auto
+    width: 100%
+    padding: 0 16px
+    margin: 0 auto
     flex-direction: column
     max-width: 420px
+    height: calc(100vh - 145px)
+    overflow-y: auto
+
+
 
 </style>

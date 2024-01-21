@@ -1,6 +1,22 @@
 @import "./variables"
+@import "./mixins"
 
 body
   height: 100%
   font-family: "Montserrat"
+
+*
+
+  scrollbar-color: #cecece #333
+
+  &::-webkit-scrollbar
+    width: 5px
+    height: 5px
+
+  &::-webkit-scrollbar-thumb
+    background: #999999
+
+  &::-webkit-scrollbar-track
+    background: rgba(206, 206, 206, 0)
+
 

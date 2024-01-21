@@ -15,9 +15,6 @@
 
 <style scoped lang="sass">
   .sidebar
-    position: fixed
-    bottom: 0
-    left: 0
     padding: 15px
     width: 100%
     gap: 20px

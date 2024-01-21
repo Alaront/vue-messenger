@@ -33,6 +33,9 @@
 </script>
 
 <style scoped lang="sass">
+  @import "~/assets/sass/mixins.sass"
+  @import "~/assets/sass/variables.sass"
+
   .user-dialogue__item
     font-family: "Montserrat"
     font-size: 14px
@@ -40,7 +43,6 @@
     font-weight: 400
     line-height: normal
     color: #000000
-
 
     &[data-type="date"]
       padding: 6px 22px
@@ -57,6 +59,10 @@
       max-width: 70%
       color:  #FFF
 
+      +min-w('1400px')
+        max-width: max-content
+        margin: 0 0 10px 0
+
     &[data-type="user"]
       padding: 11px 13px
       background: #F2F2F2
@@ -64,10 +70,14 @@
       margin: 0 auto 10px 0
       max-width: 70%
 
+      +min-w('1400px')
+        max-width: max-content
+
   .user-dialogue__item-photo
     border-radius: 20px
     overflow: hidden
     margin-bottom: 20px
+    max-width: 400px
 
     img
       width: 100%
