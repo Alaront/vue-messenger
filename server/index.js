@@ -3,6 +3,7 @@ import {config} from "dotenv";
 import path from "path";
 import { dirname } from 'path';
 import {fileURLToPath} from "url";
+import sequelize from './db.js';
 
 config()
 const app = express()
@@ -18,6 +19,19 @@ app.get('/', (req, res) => {
     res.send('Hello World')
 })
 
-app.listen(PORT, () => {
-    console.log('Express app started on ', PORT)
-})
+const startServer = async () => {
+    try {
+        await sequelize.authenticate();
+        await sequelize.sync();
+
+        app.listen(PORT, () => {
+            console.log('Express app started on ', PORT)
+        })
+
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+startServer();
+
