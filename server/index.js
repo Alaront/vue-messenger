@@ -5,6 +5,7 @@ import { dirname } from 'path';
 import {fileURLToPath} from "url";
 import sequelize from './db.js';
 import cors from 'cors';
+import routes from "./routes/index.js";
 import * as module from "./models/models.js";
 
 config()
@@ -19,6 +20,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename)
 
 app.use(express.static(path.resolve(__dirname, 'static')))
+
+app.use('/api', routes)
 
 app.get('/', (req, res) => {
     res.send('Hello World')
