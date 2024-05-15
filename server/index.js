@@ -7,6 +7,7 @@ import sequelize from './db.js';
 import cors from 'cors';
 import routes from "./routes/index.js";
 import * as module from "./models/models.js";
+import ApiError from "./Utils/ApiError.js";
 
 config()
 const app = express()
@@ -26,6 +27,8 @@ app.use('/api', routes)
 app.get('/', (req, res) => {
     res.send('Hello World')
 })
+
+app.use(ApiError)
 
 const startServer = async () => {
     try {
